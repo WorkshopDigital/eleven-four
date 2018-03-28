@@ -1,0 +1,26 @@
+{{#leaflet-map
+  lat=mapLocation.latitude
+  lng=mapLocation.longitude
+  zoom=zoom
+  onClick=(action 'pointSelection')
+  as |layers|
+}}
+
+  {{#if selectedMarker}}
+
+    {{#layers.marker
+      lat=selectedMarker.latitude
+      lng=selectedMarker.longitude
+      as |marker|
+    }}
+
+    {{/layers.marker}}
+
+  {{/if}}
+
+
+  {{layers.tile
+    url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
+  }}
+
+{{/leaflet-map}}

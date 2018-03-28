@@ -1,0 +1,23 @@
+{{#paper-toolbar as |toolbar|}}
+
+   {{#toolbar.tools}}
+
+     <h2>ElevenFour</h2>
+     <span class="flex"></span>
+
+     {{#paper-button
+      mini=true
+      onClick=(action 'getPos')
+    }}
+
+      {{paper-icon "gps fixed"}}
+
+     {{/paper-button}}
+
+   {{/toolbar.tools}}
+
+ {{/paper-toolbar}}
+
+{{outlet}}
+
+{{paper-toaster}}
